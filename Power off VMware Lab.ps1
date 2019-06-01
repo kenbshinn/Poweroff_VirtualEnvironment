@@ -16,8 +16,10 @@
 # Import assemblies/modules 
 #
 ########################################
-
+Function Install_PowerCLI
+{
 Install-Module -Name VMware.PowerCLI
+}
 
 
 
@@ -160,13 +162,17 @@ Write-Host "    *** Reports ***  "
 Write-Host " "
 Write-Host "          5.  Powered On Virutal Machines"       -ForegroundColor DarkGreen
 Write-Host " "
+Write-Host "    *** Install Tools *** "
+Write-Host " "
+Write-Host "          6.  Install PowerCLI "                 -ForegroundColor Blue
 Write-Host " "
 $strResponse = Read-Host "Enter Menu Option..."
 If($strResponse -eq "1"){. PowerOff-VirtualMachines}
 	elseif($strResponse -eq "2"){. PowerOff-VirtualHosts}
     	elseif($strResponse -eq "3"){. PowerOff-LabVCSA01}
 	elseif($strResponse -eq "4"){. PowerOff-InfrastructureHosts}
-    elseif($strResponse -eq "5"){. Report-PoweredOnVMs}
+    elseif($strResponse -eq "5"){. Report-PoweredOnVMs} 
+    elseif($strResponse -eq "6"){. Install_PowerCLI}
 		else{Write-Host "You did not supply a correct response, `
 		Please run script again." -foregroundColor Red}
 
