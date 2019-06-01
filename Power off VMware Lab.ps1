@@ -4,7 +4,7 @@
 #
 #  
 #
-#  #  Ver 0.1
+#  #  Ver 0.3
 #  Written by: Kenneth B Shinn Jr.
 #  Created 05/30/19
 #  Updated --
@@ -97,7 +97,7 @@ Stop-VMHost -server $vhnames -Confirm}
 Function PowerOff-LabVCSA01
 {
  Connect-VIServer -Server 172.26.96.44
- Shutdown-VMGuest -VM labvcsa01.pcn.local -Confirm:$false
+ Shutdown-VMGuest -VM Server.domain.local -Confirm:$false
  }
  ########################################################################################
 #
